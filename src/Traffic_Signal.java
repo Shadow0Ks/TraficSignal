@@ -1,4 +1,4 @@
-// Java Program to Implement Traffic signal
+package src;// Java Program to Implement Traffic signal
 // Using Java Swing Components
 // Importing required classes
 import java.awt.*;
@@ -7,8 +7,7 @@ import javax.swing.*;
 // Main class
 // Extending JFrame class and
 // Implementing ItemListener interface
-public class Traffic_Signal
-        extends JFrame implements ItemListener {
+public class Traffic_Signal extends JFrame implements ItemListener {
     // Setting the buttons for the layout
     JRadioButton jr1;
     JRadioButton jr2;
@@ -157,46 +156,7 @@ public class Traffic_Signal
         }
     }
 
-
-    public static void forStartTimer(){
-        for (int i = 1; i <= 30; i++){
-            System.out.println(i);
-            try {
-                Thread.sleep(200);
-            }catch (InterruptedException e){
-                e.printStackTrace();
-            }
-        }
-    }
-    public static void forStopTimer() {
-        for (int i = 1; i <= 50; i++){
-            try {
-                Thread.sleep(200);
-            }catch (InterruptedException e){
-                e.printStackTrace();
-            }
-            //////////////
-        }
-    }
-    public static void stopLightTimerClass(){
-        boolean start = false; //change later so it works with the start button
-
-        //when you press start the trafic light starts working
-        //trafic light need to go from red to green
-        //when you press start the trafic light start working
-
-
-
-        //when you press stop the trafic light stops working
-
-
-    }
-
-
-
-
-
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Method 4
 // Main driver method
     public static void main(String args[]) {
@@ -208,7 +168,9 @@ public class Traffic_Signal
         jf.setSize(500, 500);
         jf.setVisible(true);
 
-
-
+        SignalClass signalClass = new SignalClass("Lets run Program");
+        signalClass.run();
+        //this does work
+        //signalClass.forStartTimer();
     }
 }
