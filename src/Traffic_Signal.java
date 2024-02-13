@@ -112,6 +112,11 @@ public class Traffic_Signal extends JFrame implements ItemListener {
                 msg = "";
             }
         }
+        if (ie.getSource() == start)
+            msg = "Start";
+        if (ie.getSource() == stop)
+            msg = "Stop";
+
         j1.setText(msg);
     }
 

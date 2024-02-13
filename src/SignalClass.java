@@ -32,23 +32,27 @@ public class SignalClass extends Traffic_Signal {
     }
 
     public void updateFromRedToGreen(){
+//        if (x == 1){
+//            graphics.setColor(Color.red);
+//            graphics.fillOval(120, 150, 60, 60);
+//        }
 
         forStartTimer();
+
+
     }
 
     public void run(){
-        boolean isRunning = false;
-        if (start.isSelected() == true)
-            isRunning = true;
+        boolean isRunning = true;
+        //obj class for graphics
+
+
+        if (start.isSelected() == true){
+            //isRunning = true;
+        }
         while (isRunning){
             updateFromRedToGreen();
-
-
-
-            if (stop.isSelected()){
-                isRunning = false;
-            }
+            isRunning = false;
         }
-
     }
 }
