@@ -161,6 +161,8 @@ public class Traffic_Signal extends JFrame implements ItemListener {
         }
     }
 
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Method 4
 // Main driver method
@@ -173,9 +175,8 @@ public class Traffic_Signal extends JFrame implements ItemListener {
         jf.setSize(500, 500);
         jf.setVisible(true);
 
-        SignalClass signalClass = new SignalClass("Lets run Program");
+        SignalClass signalClass = new SignalClass(true);
         signalClass.run();
-        //this does work
-        //signalClass.forStartTimer();
+
     }
 }

@@ -1,14 +1,27 @@
 package src;
 
-import java.awt.*;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
-public class SignalClass extends Traffic_Signal {
-    //delta time (not sure if needed)
-    float dt;
 
-    public SignalClass(String msg) {
-        super(msg);
-        dt = 60;
+
+//What i need to do is figure out how to change the state from 0 to 1 on each of the lights
+public class SignalClass {
+    Traffic_Signal trafficSignal = new Traffic_Signal("");
+    private boolean isRunning;
+    private int redSignal;
+    private int yellowSignal;
+    private int greenSignal;
+
+    public SignalClass(boolean isRunning) {
+
+        this.isRunning = isRunning;
+        redSignal = 0;
+        yellowSignal = 0;
+        greenSignal = 0;
     }
     public void forStartTimer(){
         for (int i = 1; i <= 30; i++){
@@ -22,37 +35,28 @@ public class SignalClass extends Traffic_Signal {
         }
     }
     public void forStopTimer() {
-        for (int i = 1; i <= 50; i++){
+        for (int i = 1; i <= 20; i++){
             try {
                 Thread.sleep(200);
             } catch (InterruptedException e){
                 e.printStackTrace();
             }
+            System.out.println(i);
         }
     }
-
-    public void updateFromRedToGreen(){
-//        if (x == 1){
-//            graphics.setColor(Color.red);
-//            graphics.fillOval(120, 150, 60, 60);
-//        }
-
-        forStartTimer();
-
-
+    public int getRedState(){
+        if (redSignal == 0){
+            redSignal = trafficSignal.x;
+        }
+        return redSignal;
     }
-
     public void run(){
-        boolean isRunning = true;
-        //obj class for graphics
-
-
-        if (start.isSelected() == true){
-            //isRunning = true;
-        }
         while (isRunning){
-            updateFromRedToGreen();
+            getRedState();
+            //forStartTimer();
             isRunning = false;
         }
     }
+
+
 }
