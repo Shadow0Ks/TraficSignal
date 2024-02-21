@@ -1,6 +1,7 @@
 package src;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -44,12 +45,16 @@ public class SignalClass {
             System.out.println(i);
         }
     }
-    public int getRedState(){
-        if (redSignal == 0){
-            redSignal = trafficSignal.x;
+    public void getRedState(){
+        trafficSignal.repaint();
+        if (trafficSignal.x == 1){
+            trafficSignal.repaint();
         }
-        return redSignal;
+        trafficSignal.y = 0;
+        trafficSignal.z = 0;
     }
+
+
     public void run(){
         while (isRunning){
             getRedState();
